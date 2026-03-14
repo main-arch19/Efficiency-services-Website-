@@ -1,0 +1,221 @@
+{
+  "brand": {
+    "name": "HNeef Efficiency Services",
+    "nameShort": "HES Jamaica",
+    "tagline": "Streamline Your Success",
+    "location": "Kingston, Jamaica",
+    "yearFounded": 2023,
+    "social": {
+      "instagram": "@HESJamaica",
+      "facebook": "",
+      "whatsapp": ""
+    }
+  },
+
+  "logo": {
+    "description": "A 3D geometric 'H' icon made of two interlocking arrows — a blue arrow pointing upward-right representing growth and efficiency, and a red arrow/chevron below representing action and reliability. Below the icon: 'HNeef' in dark grey serif text, 'Efficiency Services' in red, and 'Streamline Your Success' as an italic blue script tagline. Designed on a dark charcoal background.",
+    "file": "hneef-logo.jpeg",
+    "iconColors": { "blueArrow": "#0D47A1", "redArrow": "#D32F2F" }
+  },
+
+  "colors": {
+    "primary": {
+      "default": "#0D47A1",
+      "dark": "#083480",
+      "light": "#1565C0",
+      "lighter": "#1E88E5",
+      "name": "Efficiency Blue"
+    },
+    "accent": {
+      "default": "#D32F2F",
+      "dark": "#B71C1C",
+      "light": "#E53935",
+      "lighter": "#EF5350",
+      "name": "Action Red"
+    },
+    "neutrals": {
+      "black": "#0B0F1A",
+      "dark": "#131929",
+      "charcoal": "#1C2333",
+      "slate": "#2A3344",
+      "grey": "#64748B",
+      "greyLight": "#94A3B8",
+      "silver": "#CBD5E1",
+      "lightGrey": "#E2E8F0",
+      "offWhite": "#F1F5F9",
+      "white": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "gradients": {
+      "brand": "linear-gradient(135deg, #083480, #0D47A1, #1565C0)",
+      "hero": "linear-gradient(135deg, #0B0F1A 0%, #0D47A1 100%)",
+      "redAccent": "linear-gradient(135deg, #B71C1C, #D32F2F, #E53935)",
+      "blueToRed": "linear-gradient(135deg, #0D47A1 0%, #D32F2F 100%)",
+      "dark": "linear-gradient(180deg, #0B0F1A, #131929)",
+      "glass": "linear-gradient(135deg, rgba(13,71,161,0.1), rgba(211,47,47,0.05))"
+    },
+    "darkMode": {
+      "bgPrimary": "#0B0F1A",
+      "bgSecondary": "#131929",
+      "bgCard": "#1C2333",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#94A3B8",
+      "border": "#2A3344",
+      "accentBlue": "#0D47A1",
+      "accentRed": "#D32F2F"
+    },
+    "lightMode": {
+      "bgPrimary": "#FFFFFF",
+      "bgSecondary": "#F1F5F9",
+      "bgCard": "#FFFFFF",
+      "textPrimary": "#0B0F1A",
+      "textSecondary": "#64748B",
+      "border": "#E2E8F0",
+      "accentBlue": "#0D47A1",
+      "accentRed": "#D32F2F"
+    }
+  },
+
+  "typography": {
+    "fonts": {
+      "heading": {
+        "family": "Space Grotesk",
+        "fallback": "system-ui, sans-serif",
+        "googleImport": "Space+Grotesk:wght@400;500;600;700",
+        "usage": "All headings, display text, section titles"
+      },
+      "body": {
+        "family": "Inter",
+        "fallback": "system-ui, sans-serif",
+        "googleImport": "Inter:wght@300;400;500;600;700",
+        "usage": "Body text, buttons, labels, navigation, UI elements"
+      },
+      "accent": {
+        "family": "DM Serif Display",
+        "fallback": "Georgia, serif",
+        "googleImport": "DM+Serif+Display:ital@0;1",
+        "usage": "Tagline, quotes, testimonials, mission statement — mirrors the italic script in the logo"
+      }
+    },
+    "scale": {
+      "display": { "size": "4rem", "sizeMobile": "2.25rem", "weight": 700, "lineHeight": 1.05, "font": "heading" },
+      "h1": { "size": "3rem", "sizeMobile": "1.875rem", "weight": 700, "lineHeight": 1.1, "font": "heading" },
+      "h2": { "size": "2.25rem", "sizeMobile": "1.625rem", "weight": 600, "lineHeight": 1.2, "font": "heading" },
+      "h3": { "size": "1.625rem", "sizeMobile": "1.25rem", "weight": 600, "lineHeight": 1.3, "font": "heading" },
+      "h4": { "size": "1.25rem", "sizeMobile": "1.125rem", "weight": 500, "lineHeight": 1.3, "font": "heading" },
+      "body": { "size": "1rem", "sizeMobile": "1rem", "weight": 400, "lineHeight": 1.6, "font": "body" },
+      "small": { "size": "0.875rem", "sizeMobile": "0.875rem", "weight": 400, "lineHeight": 1.5, "font": "body" },
+      "overline": { "size": "0.75rem", "sizeMobile": "0.75rem", "weight": 600, "lineHeight": 1.4, "font": "body", "textTransform": "uppercase", "letterSpacing": "0.12em" }
+    }
+  },
+
+  "spacing": {
+    "baseUnit": 4,
+    "scale": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+    "sectionPadding": { "mobile": "64px", "tablet": "96px", "desktop": "120px" },
+    "contentPadding": { "mobile": "20px", "tablet": "32px", "desktop": "64px" },
+    "maxContentWidth": "1200px"
+  },
+
+  "breakpoints": { "sm": "480px", "md": "768px", "lg": "1024px", "xl": "1280px", "2xl": "1536px" },
+
+  "motion": {
+    "easing": {
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "spring": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    },
+    "duration": { "fast": "150ms", "normal": "300ms", "slow": "500ms", "dramatic": "800ms" }
+  },
+
+  "services": {
+    "systemDevelopment": {
+      "title": "System Development & Automation",
+      "icon": "⚙️",
+      "category": "digital",
+      "items": [
+        { "name": "Automated Worksheets & Forms", "description": "Custom Google Sheets and Excel systems that handle data entry, calculations, and reporting automatically" },
+        { "name": "Workflow Optimization", "description": "Streamline your business processes to eliminate bottlenecks and manual repetition" },
+        { "name": "Smart Document Solutions", "description": "Templates, auto-fill documents, and organized filing systems that save hours" },
+        { "name": "Custom Business Integrations", "description": "Connect your tools — from invoicing to inventory — into one seamless workflow" }
+      ]
+    },
+    "awningOutdoor": {
+      "title": "Awning & Outdoor Maintenance",
+      "icon": "🏡",
+      "category": "physical",
+      "items": [
+        { "name": "Awning Assembly & Installation", "description": "Professional setup and mounting for all awning types" },
+        { "name": "Expert Setup for Shade & Style", "description": "Custom shade solutions tailored to your outdoor space" },
+        { "name": "Weed Wacker & Chainsaw Services", "description": "Heavy-duty cutting, trimming, and clearing for overgrown areas" },
+        { "name": "Yard & Tree Maintenance", "description": "Regular upkeep, pruning, and landscaping to keep your property pristine" }
+      ]
+    },
+    "residentialCleaning": {
+      "title": "General Residential Cleaning",
+      "icon": "🧹",
+      "category": "physical",
+      "items": [
+        { "name": "Kitchen, Bathroom & Living Areas", "description": "Thorough top-to-bottom cleaning of all living spaces" },
+        { "name": "Deep Cleaning & Sanitization", "description": "Hospital-grade sanitization for a spotless, germ-free home" },
+        { "name": "Washing & Ironing Services", "description": "Professional laundry care, pressed and folded to your standards" },
+        { "name": "Move-In & Move-Out Cleaning", "description": "Complete property preparation for new tenants or handover" }
+      ]
+    },
+    "windowGlass": {
+      "title": "Window & Glass Cleaning",
+      "icon": "✨",
+      "category": "physical",
+      "items": [
+        { "name": "Interior & Exterior Windows", "description": "Streak-free cleaning for all window types and heights" },
+        { "name": "Glass Doors & Mirrors", "description": "Crystal-clear glass surfaces throughout your property" },
+        { "name": "Grills, Blinds & Mesh Screens", "description": "Detailed cleaning of window hardware, blinds, and security screens" }
+      ]
+    }
+  },
+
+  "tailwindConfig": {
+    "colors": {
+      "primary": { "DEFAULT": "#0D47A1", "dark": "#083480", "light": "#1565C0", "lighter": "#1E88E5" },
+      "accent": { "DEFAULT": "#D32F2F", "dark": "#B71C1C", "light": "#E53935", "lighter": "#EF5350" },
+      "dark": { "DEFAULT": "#0B0F1A", "100": "#131929", "200": "#1C2333", "300": "#2A3344" },
+      "slate": { "DEFAULT": "#64748B", "light": "#94A3B8", "lighter": "#CBD5E1" },
+      "offwhite": "#F1F5F9"
+    },
+    "fontFamily": {
+      "heading": ["Space Grotesk", "system-ui", "sans-serif"],
+      "body": ["Inter", "system-ui", "sans-serif"],
+      "accent": ["DM Serif Display", "Georgia", "serif"]
+    }
+  },
+
+  "cssVariables": {
+    "--color-primary": "#0D47A1",
+    "--color-primary-dark": "#083480",
+    "--color-primary-light": "#1565C0",
+    "--color-accent": "#D32F2F",
+    "--color-accent-dark": "#B71C1C",
+    "--color-accent-light": "#E53935",
+    "--color-bg-primary": "#0B0F1A",
+    "--color-bg-secondary": "#131929",
+    "--color-bg-card": "#1C2333",
+    "--color-bg-elevated": "#2A3344",
+    "--color-text-primary": "#FFFFFF",
+    "--color-text-secondary": "#94A3B8",
+    "--color-border": "#2A3344",
+    "--font-heading": "'Space Grotesk', system-ui, sans-serif",
+    "--font-body": "'Inter', system-ui, sans-serif",
+    "--font-accent": "'DM Serif Display', Georgia, serif",
+    "--radius-sm": "6px",
+    "--radius-md": "10px",
+    "--radius-lg": "16px",
+    "--shadow-glow-blue": "0 0 24px rgba(13,71,161,0.3)",
+    "--shadow-glow-red": "0 0 24px rgba(211,47,47,0.2)"
+  }
+}
