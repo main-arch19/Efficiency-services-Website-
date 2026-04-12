@@ -79,20 +79,20 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+18761234567"
+                  href="tel:+18768051798"
                   className="flex items-center gap-2 text-brand-slate-light hover:text-primary text-sm transition-colors duration-300 min-h-[44px]"
                 >
                   <Phone size={14} className="flex-shrink-0 text-primary" />
-                  +1 (876) 123-4567
+                  876-805-1798
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@hneef.com"
+                  href="mailto:info@hneefefficiencyservices.com"
                   className="flex items-center gap-2 text-brand-slate-light hover:text-primary text-sm transition-colors duration-300 min-h-[44px]"
                 >
                   <Mail size={14} className="flex-shrink-0 text-primary" />
-                  info@hneef.com
+                  info@hneefefficiencyservices.com
                 </a>
               </li>
               <li>
@@ -103,7 +103,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/18761234567"
+                  href="https://wa.me/18768051798"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-[#25D366] hover:opacity-80 text-sm transition-opacity duration-300 min-h-[44px]"
@@ -128,8 +128,9 @@ export function Footer() {
             {/* Business Hours */}
             <div className="mt-4 pt-4 border-t border-dark-300">
               <p className="text-xs text-brand-slate uppercase tracking-widest mb-2">Hours</p>
-              <p className="text-sm text-brand-slate-light">Mon – Fri: 8am – 6pm</p>
-              <p className="text-sm text-brand-slate-light">Sat: 9am – 4pm</p>
+              <p className="text-sm text-brand-slate-light">Mon – Fri: 8am – 8pm</p>
+              <p className="text-sm text-brand-slate-light">Sat: 8am – 5pm</p>
+              <p className="text-sm text-brand-slate-light">Sun: Closed</p>
             </div>
           </div>
         </div>

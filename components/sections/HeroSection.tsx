@@ -123,6 +123,21 @@ export function HeroSection() {
             </span>
           </motion.div>
 
+          {/* Company name + pre-headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-2"
+          >
+            <span className="font-heading font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] text-accent leading-tight block">
+              HNeef Efficiency Services
+            </span>
+            <span className="font-body font-semibold text-base md:text-lg text-primary italic block mt-1">
+              is here to
+            </span>
+          </motion.div>
+
           {/* Headline — word by word */}
           <h1 className="font-heading font-bold text-[2.25rem] md:text-[3rem] lg:text-[4rem] leading-[1.05] tracking-[-0.02em] mb-6 text-white">
             {HEADLINE_WORDS.map((word, i) => (

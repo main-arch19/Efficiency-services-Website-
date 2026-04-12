@@ -87,15 +87,33 @@ export function AboutSection() {
               variants={itemVariants}
               className="font-accent italic text-lg md:text-xl text-primary-light leading-[1.6] mb-6 pl-4 border-l-2 border-primary/50"
             >
-              &ldquo;We believe your home should be as efficient as your business — and your business as clean as your home.&rdquo;
+              &ldquo;The absolute purpose of HES Jamaica is to produce the highest level of efficiency towards any aspect of one&apos;s business or individual needs.&rdquo;
             </motion.blockquote>
 
             <motion.p variants={itemVariants} className="text-brand-slate-light leading-[1.7] mb-4">
-              Founded in 2023 in Kingston, Jamaica, HNeef Efficiency Services was born from a simple observation: most businesses and households are juggling too many moving parts with too few systems. We bridge the gap between the physical and the digital.
+              HNeef Efficiency Services was developed based on a common obstacle observed in many start-ups and relatively new MSMEs — not having the systems needed to make simple but time-consuming administrative and operational duties perform at a more efficient and reliable pace. This creates numerous deficiencies within the business:
+            </motion.p>
+
+            <motion.ul variants={itemVariants} className="text-brand-slate-light leading-[1.7] mb-4 space-y-1 pl-4">
+              {[
+                'High level of unproductivity',
+                'Major time consumed in minor tasks',
+                'The inability to service more potential clients',
+                'Loss of revenue',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-[0.45em] w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
+
+            <motion.p variants={itemVariants} className="text-brand-slate-light leading-[1.7] mb-4">
+              Alongside that, career professionals who aren&apos;t meeting the demands of their jobs — and individuals looking to regain control of their lives — need intentional, practical assistance. And with more Jamaicans focusing on self-growth, the demand for reliable property maintenance has grown alongside the need for digital solutions.
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-brand-slate-light leading-[1.7] mb-8">
-              Whether it&apos;s a deep-clean before a big event or an automated spreadsheet system that saves you hours every week — we approach every job with the same commitment to precision and results.
+              These are the exact gaps where we step in. We take the time to understand each client&apos;s specific needs, deploy simple automated systems that target the root inefficiencies, and coach teams on applying those solutions for maximum effectiveness — all while taking complete care of their property maintenance. The journey has just begun, and the best is yet to come.
             </motion.p>
 
             {/* Stats grid */}

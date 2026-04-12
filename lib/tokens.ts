@@ -92,20 +92,20 @@ export const navLinks = [
 export const whyHESFeatures = [
   {
     icon: '⚡',
-    title: 'Versatility',
-    description: 'From your living room to your spreadsheets — one partner handles it all. No more juggling multiple vendors or contractors.',
+    title: 'Unmatched Versatility',
+    description: 'Manage your physical overhead and your digital administration through a single, reliable point of contact. From ground-level property maintenance to advanced operational trackers, HES Jamaica eliminates the friction of juggling multiple service providers so you can focus on scaling.',
     color: 'blue' as const,
   },
   {
     icon: '🛡️',
-    title: 'Reliability',
-    description: 'Every commitment is a kept promise. We show up on time, deliver on scope, and follow up to make sure you\'re 100% satisfied.',
+    title: 'Unwavering Reliability',
+    description: 'At HES Jamaica, every commitment is a kept promise. Whether it is hitting the deadline for your new automated systems or arriving on-site for property maintenance, we show up on time, deliver exactly on scope, and follow up to ensure you are 100% satisfied.',
     color: 'blue' as const,
   },
   {
     icon: '💡',
-    title: 'Innovation',
-    description: 'We combine physical precision with digital intelligence. Our solutions don\'t just fix today\'s problems — they prevent tomorrow\'s.',
+    title: 'Forward-Thinking Innovation',
+    description: 'We combine physical precision with digital intelligence. At HES Jamaica, our tailored solutions do more than just fix today\'s operational and maintenance problems — they are built to prevent tomorrow\'s.',
     color: 'blue' as const,
   },
 ]

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, MapPin, MessageCircle } from 'lucide-react'
+import { Phone, MapPin, MessageCircle, Mail, Clock } from 'lucide-react'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
 
 export function TopInfoBar() {
@@ -26,15 +26,26 @@ export function TopInfoBar() {
               </span>
             </div>
             <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1.5 text-brand-slate-light">
+                <Clock size={12} className="text-primary" />
+                Mo–Fri 8a–8p&nbsp;|&nbsp;Sat 8a–5p&nbsp;|&nbsp;Sun Closed
+              </span>
               <a
-                href="tel:+18761234567"
+                href="tel:+18768051798"
                 className="flex items-center gap-1.5 text-brand-slate-light hover:text-primary transition-colors duration-300"
               >
                 <Phone size={12} />
-                +1 (876) 123-4567
+                876-805-1798
               </a>
               <a
-                href="https://wa.me/18761234567?text=Hi%20HNeef%20Efficiency%20Services%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
+                href="mailto:info@hneefefficiencyservices.com"
+                className="flex items-center gap-1.5 text-brand-slate-light hover:text-primary transition-colors duration-300"
+              >
+                <Mail size={12} />
+                info@hneefefficiencyservices.com
+              </a>
+              <a
+                href="https://wa.me/18768051798?text=Hi%20HNeef%20Efficiency%20Services%2C%20I%27d%20like%20to%20book%20a%20free%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-[#25D366] hover:opacity-80 transition-opacity duration-300"

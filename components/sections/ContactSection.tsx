@@ -10,15 +10,15 @@ const contactItems = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (876) 123-4567',
-    href: 'tel:+18761234567',
+    value: '876-805-1798',
+    href: 'tel:+18768051798',
     color: 'text-primary',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@hneef.com',
-    href: 'mailto:info@hneef.com',
+    value: 'info@hneefefficiencyservices.com',
+    href: 'mailto:info@hneefefficiencyservices.com',
     color: 'text-primary',
   },
   {
@@ -32,7 +32,7 @@ const contactItems = [
     icon: MessageCircle,
     label: 'WhatsApp',
     value: 'Chat with us directly',
-    href: 'https://wa.me/18761234567?text=Hi%20HNeef!%20I%27d%20like%20to%20book%20a%20consultation.',
+    href: 'https://wa.me/18768051798?text=Hi%20HNeef!%20I%27d%20like%20to%20book%20a%20consultation.',
     color: 'text-[#25D366]',
     external: true,
   },
@@ -47,8 +47,8 @@ const contactItems = [
 ]
 
 const businessHours = [
-  { day: 'Monday – Friday', hours: '8:00 AM – 6:00 PM' },
-  { day: 'Saturday', hours: '9:00 AM – 4:00 PM' },
+  { day: 'Monday – Friday', hours: '8:00 AM – 8:00 PM' },
+  { day: 'Saturday', hours: '8:00 AM – 5:00 PM' },
   { day: 'Sunday', hours: 'Closed' },
 ]
 
