@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import { navLinks } from '@/lib/tokens'
 import { scrollToSection } from '@/lib/utils'
@@ -41,21 +39,8 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <div className="max-content content-padding flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            onClick={() => scrollToSection('#hero')}
-            className="flex items-center gap-3 flex-shrink-0"
-          >
-            <Image
-              src="/images/hneef-logo.jpeg"
-              alt="HNeef Efficiency Services"
-              width={120}
-              height={120}
-              className="h-10 md:h-12 w-auto object-contain rounded-sm"
-              priority
-            />
-          </Link>
+          {/* Logo placeholder — hidden */}
+          <div className="flex-shrink-0 w-px" />
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -86,17 +71,6 @@ export function Navbar() {
           {/* Right side actions */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-
-            {/* Desktop CTA */}
-            <motion.button
-              onClick={() => scrollToSection('#booking')}
-              className="hidden md:flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors duration-300 shadow-glow-red hover:shadow-glow-red-lg outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark min-h-[44px]"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.15, ease: 'backOut' }}
-            >
-              Book Free Consultation
-            </motion.button>
 
             {/* Mobile hamburger */}
             <motion.button
