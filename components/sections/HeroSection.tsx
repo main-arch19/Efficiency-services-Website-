@@ -196,6 +196,17 @@ export function HeroSection() {
             >
               Explore Our Services
             </motion.button>
+            <motion.a
+              href="https://drive.google.com/drive/folders/147eC7UD2DB1QldE5IbrAG7ErKLctsmuV?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/30 hover:border-primary text-white hover:text-primary font-semibold px-8 py-4 rounded-md transition-colors duration-300 text-base min-h-[52px] outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark inline-flex items-center justify-center"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15, ease: 'backOut' }}
+            >
+              Click here to view samples
+            </motion.a>
           </motion.div>
 
           {/* Dual service badge */}
