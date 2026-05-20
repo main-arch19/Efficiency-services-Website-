@@ -3,7 +3,6 @@
 import { motion, type Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { scrollToSection } from '@/lib/utils'
 import { whyHESFeatures } from '@/lib/tokens'
 
 export function WhyHESSection() {

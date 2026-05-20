@@ -4,7 +4,6 @@ import { motion, type Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Phone, Mail, MapPin, MessageCircle, Clock, Instagram } from 'lucide-react'
-import { scrollToSection } from '@/lib/utils'
 
 const contactItems = [
   {

@@ -1,7 +1,6 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { scrollToSection } from '@/lib/utils'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
 
 export function FloatingConsultationBar() {
