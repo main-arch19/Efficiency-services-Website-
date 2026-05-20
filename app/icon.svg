@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Dark background -->
+  <rect width="100" height="100" rx="12" fill="#1e2130"/>
+
+  <!-- Black corner squares (frame effect) -->
+  <rect x="18" y="18" width="16" height="16" fill="#0d0f1a"/>
+  <rect x="66" y="18" width="16" height="16" fill="#0d0f1a"/>
+  <rect x="18" y="66" width="16" height="16" fill="#0d0f1a"/>
+  <rect x="66" y="66" width="16" height="16" fill="#0d0f1a"/>
+
+  <!-- Red geometric accent (lower-right of mark) -->
+  <polygon points="42,72 58,58 72,72 58,80" fill="#c0182a"/>
+  <polygon points="58,58 72,58 72,72" fill="#8c1020"/>
+
+  <!-- Blue arrow body (vertical stem) -->
+  <rect x="32" y="38" width="14" height="34" rx="2" fill="#2a5ccc"/>
+  <!-- Blue arrow body (horizontal stem) -->
+  <rect x="32" y="38" width="34" height="14" rx="2" fill="#2a5ccc"/>
+  <!-- Blue arrow head pointing upper-right -->
+  <polygon points="54,20 80,20 80,46" fill="#3a6ee8"/>
+  <!-- Arrow head highlight -->
+  <polygon points="54,20 80,20 67,33" fill="#4d7ff5"/>
+
+  <!-- Depth shading on vertical stem -->
+  <rect x="32" y="38" width="5" height="34" rx="2" fill="#1e4aaa" opacity="0.6"/>
+</svg>

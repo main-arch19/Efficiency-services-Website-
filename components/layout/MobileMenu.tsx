@@ -82,7 +82,7 @@ export function MobileMenu({ isOpen, onClose, activeSection }: MobileMenuProps) 
               className="mt-8"
             >
               <button
-                onClick={() => handleNavClick('#booking')}
+                onClick={() => { onClose(); window.open('https://form.jotform.com/260415121547045', '_blank') }}
                 className="w-full bg-accent hover:bg-accent-light text-white font-semibold text-lg py-4 px-8 rounded-md transition-colors duration-300 min-h-[56px]"
               >
                 Book Free Consultation

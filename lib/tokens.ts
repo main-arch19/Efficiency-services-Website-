@@ -38,6 +38,13 @@ export const servicesList = [
     dropdownValue: 'window-glass',
     image: 'https://images.unsplash.com/photo-1527515637462-cff94ead201d?w=800&h=600&fit=crop&auto=format',
   },
+  {
+    ...tokens.services.propertyManagement,
+    id: 'propertyManagement',
+    accentColor: 'blue' as const,
+    dropdownValue: 'property-management',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=500&fit=crop&auto=format',
+  },
 ]
 
 // Stats for About section
@@ -45,7 +52,7 @@ export const stats = [
   { value: 50, label: 'Projects Completed', suffix: '+' },
   { value: 30, label: 'Happy Clients', suffix: '+' },
   { value: 2, label: 'Years Operating', suffix: '' },
-  { value: 4, label: 'Service Categories', suffix: '' },
+  { value: 5, label: 'Service Categories', suffix: '' },
 ]
 
 // Testimonials data

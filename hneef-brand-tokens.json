@@ -177,6 +177,18 @@
         { "name": "Glass Doors & Mirrors", "description": "Crystal-clear glass surfaces throughout your property" },
         { "name": "Grills, Blinds & Mesh Screens", "description": "Detailed cleaning of window hardware, blinds, and security screens" }
       ]
+    },
+    "propertyManagement": {
+      "title": "Property Management Solutions",
+      "icon": "🏢",
+      "category": "property",
+      "items": [
+        { "name": "Client & Property Onboarding", "description": "Conducting site visits, walkthroughs with potential clients, and gathering comprehensive property data." },
+        { "name": "Visual & Marketing Support", "description": "Capturing updated footage for property marketing and promotional needs." },
+        { "name": "Project Oversight", "description": "Monitoring on-site construction and development progress on behalf of investors, realtors, and interested clients." },
+        { "name": "Maintenance Coordination", "description": "Booking and supervising routine structural services, including HVAC technicians, professional movers, haulers, and skilled laborers." },
+        { "name": "Short-Term Rental (Airbnb) Management", "description": "Fully coordinating guest check-ins/check-outs and managing turnover cleaning schedules for hosts." }
+      ]
     }
   },
 

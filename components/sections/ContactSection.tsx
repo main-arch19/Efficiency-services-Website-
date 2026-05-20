@@ -144,7 +144,7 @@ export function ContactSection() {
               <div className="mt-6 pt-4 border-t border-dark-300">
                 <p className="text-xs text-brand-slate-light mb-3">Ready to get started?</p>
                 <motion.button
-                  onClick={() => scrollToSection('#booking')}
+                  onClick={() => window.open('https://form.jotform.com/260415121547045', '_blank')}
                   className="w-full bg-accent hover:bg-accent-light text-white font-semibold text-sm py-3 rounded-md transition-colors duration-300 min-h-[44px]"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}

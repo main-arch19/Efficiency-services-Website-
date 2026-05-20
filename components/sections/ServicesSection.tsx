@@ -5,8 +5,9 @@ import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { ChevronDown, ArrowRight } from 'lucide-react'
 import { servicesList } from '@/lib/tokens'
-import { scrollToSection } from '@/lib/utils'
 import { cn } from '@/lib/utils'
+
+const JOTFORM_URL = 'https://form.jotform.com/260415121547045'
 
 interface ServiceCardProps {
   service: typeof servicesList[0]
@@ -20,9 +21,7 @@ function ServiceCard({ service, index, featured = false }: ServiceCardProps) {
 
   const handleBookForThis = (e: React.MouseEvent) => {
     e.stopPropagation()
-    scrollToSection('#booking')
-    sessionStorage.setItem('selectedService', service.dropdownValue)
-    window.dispatchEvent(new CustomEvent('serviceSelected', { detail: service.dropdownValue }))
+    window.open(JOTFORM_URL, '_blank', 'noopener,noreferrer')
   }
 
   if (featured) {
@@ -200,8 +199,9 @@ export function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
-  const digitalServices = servicesList.filter((s) => s.accentColor === 'blue')
+  const digitalServices = servicesList.filter((s) => s.accentColor === 'blue' && s.id !== 'propertyManagement')
   const physicalServices = servicesList.filter((s) => s.accentColor === 'red')
+  const propertyServices = servicesList.filter((s) => s.id === 'propertyManagement')
 
   return (
     <section id="services" className="section-padding bg-dark">
@@ -251,7 +251,7 @@ export function ServicesSection() {
         </div>
 
         {/* Physical services — grid */}
-        <div>
+        <div className="mb-12">
           <motion.div
             initial={{ opacity: 0, x: -16 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -267,6 +267,27 @@ export function ServicesSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {physicalServices.map((service, i) => (
               <ServiceCard key={service.id} service={service} index={i} />
+            ))}
+          </div>
+        </div>
+
+        {/* Property Management — featured hero card */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="w-3 h-3 rounded-sm bg-primary rotate-45 flex-shrink-0" />
+            <h3 className="font-heading font-semibold text-base text-primary uppercase tracking-widest">
+              Property Management
+            </h3>
+            <div className="flex-1 h-px bg-primary/20" />
+          </motion.div>
+          <div className="space-y-6">
+            {propertyServices.map((service, i) => (
+              <ServiceCard key={service.id} service={service} index={i} featured />
             ))}
           </div>
         </div>

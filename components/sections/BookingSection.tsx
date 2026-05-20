@@ -1,88 +1,22 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { Check, Calendar, Phone, Mail, User, MessageSquare, ChevronDown } from 'lucide-react'
+import { useRef } from 'react'
+import { Check, ArrowRight } from 'lucide-react'
 
-
-const bookingSchema = z.object({
-  fullName: z.string().min(2, 'Please enter your full name'),
-  phone: z.string().min(7, 'Please enter a valid phone number'),
-  email: z.string().email('Please enter a valid email address'),
-  serviceInterest: z.string().min(1, 'Please select a service'),
-  preferredDate: z.string().min(1, 'Please select a preferred date'),
-  description: z.string().optional(),
-})
-
-type BookingFormData = z.infer<typeof bookingSchema>
-
-const serviceOptions = [
-  { value: 'system-development', label: 'System Development & Automation ⚙️' },
-  { value: 'awning-outdoor', label: 'Awning & Outdoor Maintenance 🏡' },
-  { value: 'residential-cleaning', label: 'General Residential Cleaning 🧹' },
-  { value: 'window-glass', label: 'Window & Glass Cleaning ✨' },
-  { value: 'multiple', label: 'Multiple Services' },
-  { value: 'not-sure', label: 'Not Sure Yet — Help Me Decide' },
-]
+const JOTFORM_URL = 'https://form.jotform.com/260415121547045'
 
 export function BookingSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle')
-  const [submittedName, setSubmittedName] = useState('')
-
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors, isValid },
-  } = useForm<BookingFormData>({
-    resolver: zodResolver(bookingSchema),
-    mode: 'onBlur',
-  })
-
-  // Listen for service pre-selection events
-  useEffect(() => {
-    const handleServiceSelected = (e: CustomEvent) => {
-      setValue('serviceInterest', e.detail, { shouldValidate: true })
-    }
-    window.addEventListener('serviceSelected', handleServiceSelected as EventListener)
-
-    // Check sessionStorage on mount
-    const stored = sessionStorage.getItem('selectedService')
-    if (stored) {
-      setValue('serviceInterest', stored, { shouldValidate: true })
-      sessionStorage.removeItem('selectedService')
-    }
-
-    return () => window.removeEventListener('serviceSelected', handleServiceSelected as EventListener)
-  }, [setValue])
-
-  const onSubmit = async (data: BookingFormData) => {
-    setFormState('submitting')
-    setSubmittedName(data.fullName)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setFormState('success')
-  }
-
-  const inputClass =
-    'w-full h-12 px-4 bg-dark-200 border border-dark-300 rounded-md text-white text-base placeholder:text-brand-slate focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-300 font-body'
-
-  const labelClass = 'block text-xs font-body font-semibold uppercase tracking-widest text-brand-slate-light mb-2'
-
-  const errorClass = 'mt-1.5 text-xs text-red-400'
 
   return (
     <section id="booking" className="section-padding bg-dark-100">
       <div className="max-content content-padding">
         <div
           ref={ref}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
           {/* Left — compelling copy */}
           <motion.div
@@ -133,201 +67,48 @@ export function BookingSection() {
             </div>
           </motion.div>
 
-          {/* Right — form */}
+          {/* Right — CTA card */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
           >
-            <div className="bg-dark-200 border border-dark-300 rounded-xl p-6 md:p-8 relative overflow-hidden">
+            <div className="bg-dark-200 border border-dark-300 rounded-xl p-8 md:p-12 relative overflow-hidden text-center">
               {/* Top accent */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent-light to-accent" />
 
-              <AnimatePresence mode="wait">
-                {formState === 'success' ? (
-                  /* Success state */
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.4, ease: 'backOut' }}
-                    className="py-8 text-center"
-                  >
-                    {/* Animated checkmark */}
-                    <div className="w-20 h-20 rounded-full bg-green-500/15 border-2 border-green-500 flex items-center justify-center mx-auto mb-6">
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.4, ease: 'backOut' }}
-                      >
-                        <Check size={36} className="text-green-400" />
-                      </motion.div>
-                    </div>
+              {/* Glow */}
+              <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(211,47,47,0.08), transparent)' }} />
 
-                    <h3 className="font-heading font-bold text-2xl text-white mb-3">
-                      You&apos;re All Set, {submittedName.split(' ')[0]}!
-                    </h3>
-                    <p className="text-brand-slate-light leading-relaxed mb-2">
-                      Your consultation request has been received.
-                    </p>
-                    <p className="text-primary font-semibold">
-                      We&apos;ll contact you within 24 hours.
-                    </p>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl">📅</span>
+                </div>
 
-                    <div className="mt-6 p-4 rounded-md bg-dark border border-dark-300 text-left">
-                      <p className="text-xs text-brand-slate uppercase tracking-widest mb-2">Next Steps</p>
-                      <p className="text-sm text-brand-slate-light">Check your email and WhatsApp for a confirmation message and scheduling link from HNeef Efficiency Services.</p>
-                    </div>
-                  </motion.div>
-                ) : (
-                  /* Form state */
-                  <motion.form
-                    key="form"
-                    initial={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onSubmit={handleSubmit(onSubmit)}
-                    className="space-y-5"
-                    noValidate
-                  >
-                    <h3 className="font-heading font-bold text-xl text-white mb-1">Book My Free Consultation</h3>
-                    <p className="text-brand-slate-light text-sm mb-5">All fields marked * are required.</p>
+                <h3 className="font-heading font-bold text-2xl text-white mb-3">
+                  Ready to Get Started?
+                </h3>
+                <p className="text-brand-slate-light leading-relaxed mb-8 max-w-sm mx-auto">
+                  Fill out our quick consultation form and we&apos;ll be in touch within 24 hours to schedule your free call.
+                </p>
 
-                    {/* Full Name */}
-                    <div>
-                      <label className={labelClass}>
-                        Full Name *
-                      </label>
-                      <div className="relative">
-                        <User size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-slate pointer-events-none" />
-                        <input
-                          {...register('fullName')}
-                          type="text"
-                          placeholder="Your full name"
-                          className={`${inputClass} pl-10`}
-                          inputMode="text"
-                          autoComplete="name"
-                        />
-                      </div>
-                      {errors.fullName && <p className={errorClass}>{errors.fullName.message}</p>}
-                    </div>
+                <motion.a
+                  href={JOTFORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 h-14 px-8 bg-accent text-white font-semibold text-base rounded-md transition-colors duration-300 outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark-200 hover:bg-accent-light"
+                  style={{ boxShadow: '0 0 28px rgba(211,47,47,0.35)' }}
+                  whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(211,47,47,0.55)' }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Book Your Free Consultation
+                  <ArrowRight size={18} />
+                </motion.a>
 
-                    {/* Phone */}
-                    <div>
-                      <label className={labelClass}>
-                        Phone Number * <span className="text-brand-slate normal-case tracking-normal">(Jamaica +1-876 preferred)</span>
-                      </label>
-                      <div className="relative">
-                        <Phone size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-slate pointer-events-none" />
-                        <input
-                          {...register('phone')}
-                          type="tel"
-                          placeholder="+1 (876) 000-0000"
-                          className={`${inputClass} pl-10`}
-                          inputMode="tel"
-                          autoComplete="tel"
-                        />
-                      </div>
-                      {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
-                    </div>
-
-                    {/* Email */}
-                    <div>
-                      <label className={labelClass}>Email Address *</label>
-                      <div className="relative">
-                        <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-slate pointer-events-none" />
-                        <input
-                          {...register('email')}
-                          type="email"
-                          placeholder="your@email.com"
-                          className={`${inputClass} pl-10`}
-                          inputMode="email"
-                          autoComplete="email"
-                        />
-                      </div>
-                      {errors.email && <p className={errorClass}>{errors.email.message}</p>}
-                    </div>
-
-                    {/* Service Interest */}
-                    <div>
-                      <label className={labelClass}>Service Interest *</label>
-                      <div className="relative">
-                        <select
-                          {...register('serviceInterest')}
-                          className={`${inputClass} pr-10 appearance-none cursor-pointer`}
-                        >
-                          <option value="">Select a service...</option>
-                          {serviceOptions.map((opt) => (
-                            <option key={opt.value} value={opt.value} className="bg-dark-200">
-                              {opt.label}
-                            </option>
-                          ))}
-                        </select>
-                        <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-slate pointer-events-none" />
-                      </div>
-                      {errors.serviceInterest && <p className={errorClass}>{errors.serviceInterest.message}</p>}
-                    </div>
-
-                    {/* Preferred Date */}
-                    <div>
-                      <label className={labelClass}>Preferred Date *</label>
-                      <div className="relative">
-                        <Calendar size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-slate pointer-events-none" />
-                        <input
-                          {...register('preferredDate')}
-                          type="date"
-                          className={`${inputClass} pl-10`}
-                          min={new Date().toISOString().split('T')[0]}
-                        />
-                      </div>
-                      {errors.preferredDate && <p className={errorClass}>{errors.preferredDate.message}</p>}
-                    </div>
-
-                    {/* Description */}
-                    <div>
-                      <label className={labelClass}>
-                        Brief Description <span className="text-brand-slate normal-case tracking-normal">(optional)</span>
-                      </label>
-                      <div className="relative">
-                        <MessageSquare size={16} className="absolute left-4 top-4 text-brand-slate pointer-events-none" />
-                        <textarea
-                          {...register('description')}
-                          placeholder="Tell us a bit about what you need..."
-                          rows={3}
-                          className={`${inputClass} h-auto pl-10 pt-3 resize-none`}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Submit */}
-                    <motion.button
-                      type="submit"
-                      disabled={!isValid || formState === 'submitting'}
-                      className="w-full h-14 bg-accent text-white font-semibold text-base rounded-md transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark-200 flex items-center justify-center gap-2 mt-2"
-                      style={{
-                        opacity: isValid ? 1 : 0.5,
-                        cursor: isValid ? 'pointer' : 'not-allowed',
-                        boxShadow: isValid ? '0 0 24px rgba(211,47,47,0.3)' : 'none',
-                      }}
-                      whileHover={isValid ? { scale: 1.01, boxShadow: '0 0 36px rgba(211,47,47,0.5)' } : {}}
-                      whileTap={isValid ? { scale: 0.99 } : {}}
-                    >
-                      {formState === 'submitting' ? (
-                        <>
-                          <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        'Book My Free Consultation'
-                      )}
-                    </motion.button>
-
-                    <p className="text-center text-xs text-brand-slate">
-                      We&apos;ll respond within 24 hours · No obligation
-                    </p>
-                  </motion.form>
-                )}
-              </AnimatePresence>
+                <p className="mt-5 text-xs text-brand-slate">
+                  No obligation · We respond within 24 hours
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

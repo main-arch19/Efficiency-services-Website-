@@ -21,7 +21,7 @@ export function FloatingConsultationBar() {
         >
           <div className="px-4 pb-3 pt-2 bg-dark/95 backdrop-blur-md border-t border-dark-300">
             <motion.button
-              onClick={() => scrollToSection('#booking')}
+              onClick={() => window.open('https://form.jotform.com/260415121547045', '_blank')}
               className="w-full h-14 bg-accent hover:bg-accent-light text-white font-semibold text-base rounded-md transition-colors duration-300 shadow-glow-red-lg outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
               whileTap={{ scale: 0.98 }}
             >

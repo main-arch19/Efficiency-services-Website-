@@ -179,7 +179,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <motion.button
-              onClick={() => scrollToSection('#booking')}
+              onClick={() => window.open('https://form.jotform.com/260415121547045', '_blank')}
               className="bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-md transition-colors duration-300 shadow-glow-red hover:shadow-glow-red-lg text-base min-h-[52px] outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

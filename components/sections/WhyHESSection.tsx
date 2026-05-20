@@ -114,7 +114,7 @@ export function WhyHESSection() {
               </p>
             </div>
             <motion.button
-              onClick={() => scrollToSection('#booking')}
+              onClick={() => window.open('https://form.jotform.com/260415121547045', '_blank')}
               className="flex-shrink-0 bg-accent hover:bg-accent-light text-white font-semibold px-8 py-4 rounded-md transition-colors duration-300 text-base min-h-[52px] whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary shadow-[0_4px_24px_rgba(211,47,47,0.4)] hover:shadow-[0_4px_32px_rgba(211,47,47,0.6)]"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
